@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Responsive mobile-first enterprise dashboard"
+  >
+
   <title>Responsive Enterprise Dashboard</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
   <div class="dashboard">
 
     <header class="dashboard-header">
@@ -20,10 +28,24 @@
       <a href="#analytics">Analytics</a>
       <a href="#users">Users</a>
       <a href="#settings">Settings</a>
+
+      <button
+        class="button"
+        type="button"
+        onclick="toggleTheme()"
+        aria-label="Toggle dark and light theme"
+      >
+        Toggle Theme
+      </button>
     </nav>
 
     <main>
-      <section class="dashboard-grid" id="overview" aria-label="Dashboard cards">
+
+      <section
+        class="dashboard-grid"
+        id="overview"
+        aria-label="Dashboard overview"
+      >
 
         <article class="card">
           <h2>Active Users</h2>
@@ -46,6 +68,22 @@
         </article>
 
       </section>
+
+      <section id="analytics" aria-labelledby="analytics-heading">
+        <h2 id="analytics-heading">Analytics</h2>
+        <p>Dashboard analytics and performance information.</p>
+      </section>
+
+      <section id="users" aria-labelledby="users-heading">
+        <h2 id="users-heading">Users</h2>
+        <p>Manage and review active dashboard users.</p>
+      </section>
+
+      <section id="settings" aria-labelledby="settings-heading">
+        <h2 id="settings-heading">Settings</h2>
+        <p>Configure dashboard preferences.</p>
+      </section>
+
     </main>
 
     <footer>
@@ -53,17 +91,19 @@
     </footer>
 
   </div>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme =
+        document.documentElement.getAttribute("data-theme");
+
+      if (currentTheme === "dark") {
+        document.documentElement.removeAttribute("data-theme");
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    }
+  </script>
+
 </body>
 </html>
-<nav class="dashboard-nav" aria-label="Main navigation">
-  <a href="#overview">Overview</a>
-  <a href="#analytics">Analytics</a>
-  <a href="#users">Users</a>
-  <a href="#settings">Settings</a>
-
-  <button
-  class="button"
-  type="button"
-  onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">
-  Toggle Theme
-  </button>
