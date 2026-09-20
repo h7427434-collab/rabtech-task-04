@@ -108,3 +108,35 @@ textarea {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
+/* 768px — tablet */
+@media (min-width: 768px) {
+  .dashboard {
+    width: min(100% - 3rem, 1200px);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 1024px — desktop */
+@media (min-width: 1024px) {
+  .dashboard {
+    width: min(100% - 4rem, 1280px);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* 1440px — large desktop */
+@media (min-width: 1440px) {
+  .dashboard {
+    width: min(100% - 5rem, 1440px);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
