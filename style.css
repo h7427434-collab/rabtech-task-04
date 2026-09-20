@@ -182,3 +182,25 @@ button {
     overflow-x: hidden;
   }
 }
+/* Mobile overflow protection */
+@media (max-width: 767px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .dashboard {
+    width: calc(100% - 2rem);
+    max-width: 100%;
+  }
+
+  .dashboard-grid {
+    width: 100%;
+  }
+
+  .card {
+    min-width: 0;
+  }
+}
