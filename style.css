@@ -42,3 +42,69 @@
   --glass-background: rgba(30, 41, 59, 0.75);
   --glass-border: rgba(255, 255, 255, 0.12);
 }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: Arial, sans-serif;
+  font-size: var(--font-md);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.dashboard {
+  width: min(100% - 2rem, 1440px);
+  margin-inline: auto;
+  padding-block: var(--space-lg);
+}
+
+.dashboard-header {
+  margin-bottom: var(--space-lg);
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: var(--font-2xl);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.card {
+  padding: var(--space-lg);
+  background: var(--glass-background);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
